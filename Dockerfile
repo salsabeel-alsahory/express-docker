@@ -5,7 +5,8 @@ FROM node:18.16.1-alpine
 WORKDIR /usr/app
 
 Run apk add curl
-
+RUN apt-get -y update
+RUN apt-get -y install nginx
 # Copy only two files to the image
 COPY package.json package-lock.json ./
 
